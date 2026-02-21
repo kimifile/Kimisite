@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Minimalist palette - clean whites and soft blues */
+    --background: 0 0% 100%;
+    --background-secondary: 210 20% 98%;
+    --foreground: 220 15% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+    /* Primary - Soft blue like Trip.com */
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 15% 15%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 10% 50%;
+    /* Accent - Coral for CTAs */
+    --accent: 15 100% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 210 100% 50%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-foreground font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+/* Custom scrollbar - minimal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Card styles - minimal */
+.property-card {
+  transition: all 0.2s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Search bar - Trip.com style */
+.search-bar {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 4px 24px rgba(0, 119, 255, 0.12);
+  border-color: #0077ff;
+}
+
+/* Filter chips - minimal */
+.filter-chip {
+  @apply px-4 py-2 rounded-full text-sm font-medium transition-all;
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.filter-chip:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.filter-chip.active {
+  background: #0077ff;
+  color: white;
+}
+
+/* Primary button - coral accent */
+.btn-primary {
+  @apply px-6 py-3 rounded-xl font-semibold text-white transition-all;
+  background: #ff6b35;
+}
+
+.btn-primary:hover {
+  background: #e55a2b;
+  transform: translateY(-1px);
+}
+
+/* Secondary button - blue */
+.btn-secondary {
+  @apply px-6 py-3 rounded-xl font-semibold transition-all;
+  background: #0077ff;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #0066dd;
+}
+
+/* Ghost button */
+.btn-ghost {
+  @apply px-4 py-2 rounded-xl font-medium transition-all;
+  color: #64748b;
+}
+
+.btn-ghost:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+/* Badge styles */
+.badge-verified {
+  @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium;
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-instant {
+  @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium;
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-student {
+  @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium;
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge-shortlet {
+  @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium;
+  background: #fce7f3;
+  color: #be185d;
+}
+
+/* Rating stars */
+.star-filled {
+  color: #fbbf24;
+}
+
+.star-empty {
+  color: #e2e8f0;
+}
+
+/* AI Chat bubble */
+.ai-bubble {
+  @apply p-4 rounded-2xl;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+/* Section styles */
+.section-container {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Navigation */
+.nav-link {
+  @apply text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors;
+}
+
+/* Input styles */
+.input-minimal {
+  @apply w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all;
+}
+
+/* Date picker style */
+.date-input {
+  @apply px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-500 text-sm;
+}
+
+/* Guest counter */
+.guest-counter {
+  @apply flex items-center gap-3;
+}
+
+.guest-counter button {
+  @apply w-8 h-8 rounded-full flex items-center justify-center transition-all;
+  background: #f1f5f9;
+}
+
+.guest-counter button:hover {
+  background: #e2e8f0;
+}
+
+.guest-counter button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Map toggle */
+.map-toggle {
+  @apply flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all;
+  background: white;
+  border: 1px solid #e2e8f0;
+}
+
+.map-toggle:hover {
+  border-color: #0077ff;
+  color: #0077ff;
+}
+
+/* Price tag */
+.price-tag {
+  @apply font-bold text-lg;
+  color: #ff6b35;
+}
+
+/* Category tabs */
+.category-tab {
+  @apply px-5 py-3 rounded-full text-sm font-medium transition-all whitespace-nowrap;
+}
+
+.category-tab.active {
+  background: #0077ff;
+  color: white;
+}
+
+.category-tab:not(.active) {
+  color: #64748b;
+}
+
+.category-tab:not(.active):hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+/* AI Assistant button */
+.ai-button {
+  @apply fixed bottom-6 right-6 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all z-50;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.ai-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+}
+
+/* Listing form */
+.form-section {
+  @apply space-y-4;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-slate-700 mb-1;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .search-bar {
+    border-radius: 16px;
+  }
+  
+  .category-tab {
+    @apply px-4 py-2 text-xs;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
